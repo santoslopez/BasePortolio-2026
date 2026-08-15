@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Santos López</title>
+
+    <meta
+        name="description"
+        content="Página personal de Santos López."
+    >
+
+    <meta name="author" content="Santos López">
+
+    <meta name="theme-color" content="#fafafa">
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --background: #fafafa;
+            --surface: #ffffff;
+
+            --text: #171717;
+            --muted: #737373;
+            --subtle: #a3a3a3;
+
+            --border: #e5e5e5;
+            --hover: #f3f3f3;
+
+            --max-width: 760px;
+        }
+
+        [data-theme="dark"] {
+            --background: #0c0c0c;
+            --surface: #151515;
+
+            --text: #f5f5f5;
+            --muted: #a3a3a3;
+            --subtle: #737373;
+
+            --border: #292929;
+            --hover: #1c1c1c;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background: var(--background);
+            color: var(--text);
+
+            font-family:
+                Inter,
+                ui-sans-serif,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+
+            transition:
+                background-color .3s ease,
+                color .3s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =========================================================
+           PAGE
+        ========================================================= */
+
+        .page {
+            width: min(
+                calc(100% - 48px),
+                var(--max-width)
+            );
+
+            margin: 0 auto;
+
+            padding:
+                32px 0 50px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 105px;
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 600;
+
+            letter-spacing: -.02em;
+        }
+
+        nav {
+            display: flex;
+
+            align-items: center;
+
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--muted);
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition:
+                color .2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+
+        /* =========================================================
+           THEME
+        ========================================================= */
+
+        .theme-toggle {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 34px;
+            height: 34px;
+
+            padding: 0;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 50%;
+
+            background: transparent;
+
+            color: var(--muted);
+
+            cursor: pointer;
+
+            transition:
+                background .2s ease,
+                color .2s ease,
+                transform .2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--hover);
+            color: var(--text);
+
+            transform: rotate(10deg);
+        }
+
+        .theme-toggle svg {
+            width: 15px;
+            height: 15px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            display: grid;
+
+            grid-template-columns:
+                180px
+                minmax(0, 1fr);
+
+            gap: 30px;
+
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+
+            display: block;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--hover);
+        }
+
+        .hero-content {
+            padding-top: 2px;
+        }
+
+        .name {
+            margin: 0;
+
+            font-size:
+                clamp(32px, 5vw, 46px);
+
+            line-height: 1.08;
+
+            letter-spacing: -.045em;
+
+            font-weight: 650;
+        }
+
+        .role {
+            margin: 10px 0 0;
+
+            color: var(--muted);
+
+            font-size: 16px;
+        }
+
+        .bio {
+            max-width: 610px;
+
+            margin: 28px 0 0;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           SOCIALS
+        ========================================================= */
+
+        .socials {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition:
+                transform .2s ease,
+                opacity .2s ease;
+        }
+
+        .social-link:hover {
+            transform:
+                translateY(-1px);
+
+            opacity: .8;
+        }
+
+        .social-link svg {
+            width: 15px;
+            height: 15px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================================
+           COLORES ORIGINALES DE LAS REDES
+           Los colores aparecen SIEMPRE, no solamente al pasar
+           el mouse.
+        ========================================================= */
+
+        .social-link.github {
+            color: #24292f;
+        }
+
+        .social-link.linkedin {
+            color: #0a66c2;
+        }
+
+        .social-link.instagram {
+            color: #e1306c;
+        }
+
+
+        /* =========================================================
+           COLORES PARA MODO OSCURO
+        ========================================================= */
+
+        [data-theme="dark"] .social-link.github {
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] .social-link.linkedin {
+            color: #0a66c2;
+        }
+
+        [data-theme="dark"] .social-link.instagram {
+            color: #e1306c;
+        }
+
+
+        /* =========================================================
+           DIVIDER
+        ========================================================= */
+
+        .divider {
+            width: 100%;
+            height: 1px;
+
+            margin:
+                70px 0 58px;
+
+            background: var(--border);
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        .section {
+            margin-bottom: 58px;
+        }
+
+        .section-label {
+            margin-bottom: 20px;
+
+            color: var(--subtle);
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: .11em;
+
+            text-transform: uppercase;
+        }
+
+        .section p {
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           ELSEWHERE
+        ========================================================= */
+
+        .projects {
+            display: flex;
+
+            flex-direction: column;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+        .project {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                auto;
+
+            gap: 20px;
+
+            align-items: center;
+
+            padding: 20px 0;
+
+            border-bottom:
+                1px solid var(--border);
+
+            transition:
+                padding .2s ease;
+        }
+
+        .project:hover {
+            padding-left: 6px;
+        }
+
+        .project-title {
+            margin: 0;
+
+            font-size: 15px;
+
+            font-weight: 550;
+
+            letter-spacing: -.01em;
+        }
+
+        .project-description {
+            margin: 3px 0 0;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .project-arrow {
+            color: var(--subtle);
+
+            font-size: 18px;
+
+            transition:
+                transform .2s ease,
+                color .2s ease;
+        }
+
+        .project:hover .project-arrow {
+            color: var(--text);
+
+            transform:
+                translate(3px, -3px);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            padding-top: 20px;
+
+            color: var(--subtle);
+
+            font-size: 12px;
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        .animate {
+            opacity: 0;
+
+            transform:
+                translateY(12px);
+
+            animation:
+                fadeIn .7s
+                cubic-bezier(.22, 1, .36, 1)
+                forwards;
+        }
+
+        .delay-1 {
+            animation-delay: .05s;
+        }
+
+        .delay-2 {
+            animation-delay: .12s;
+        }
+
+        .delay-3 {
+            animation-delay: .19s;
+        }
+
+        .delay-4 {
+            animation-delay: .26s;
+        }
+
+        @keyframes fadeIn {
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .page {
+                width:
+                    calc(100% - 36px);
+
+                padding-top: 22px;
+            }
+
+            header {
+                margin-bottom: 70px;
+            }
+
+            nav {
+                gap: 13px;
+            }
+
+            nav a {
+                display: block;
+
+                font-size: 11px;
+            }
+
+            .theme-toggle {
+                width: 30px;
+                height: 30px;
+            }
+
+            .hero {
+                display: block;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+
+                margin-bottom: 25px;
+            }
+
+            .name {
+                font-size: 36px;
+            }
+
+            .role {
+                font-size: 15px;
+            }
+
+            .bio {
+                margin-top: 22px;
+
+                font-size: 14px;
+
+                line-height: 1.75;
+            }
+
+            .socials {
+                gap: 14px 17px;
+
+                margin-top: 25px;
+            }
+
+            .divider {
+                margin:
+                    55px 0 45px;
+            }
+
+            .section {
+                margin-bottom: 48px;
+            }
+
+            .project {
+                padding: 18px 0;
+            }
+
+            .project-title {
+                font-size: 14px;
+            }
+
+            .project-description {
+                font-size: 12px;
+            }
+
+            footer {
+                align-items: flex-start;
+
+                gap: 10px;
+
+                flex-direction: column;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="animate delay-1">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            SANTOS LÓPEZ
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <!--a href="otro.html">
+                Otro
+            </a>
+
+            <a href="links.html">
+                Links
+            </a-->
+
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Cambiar tema"
+                title="Cambiar tema"
+            >
+
+                <!-- MOON -->
+
+                <svg
+                    id="moonIcon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                >
+
+                    <path
+                        d="M21 12.79A9 9 0 1 1 11.21 3
+                        7 7 0 0 0 21 12.79z"
+                    />
+
+                </svg>
+
+
+                <!-- SUN -->
+
+                <svg
+                    id="sunIcon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    style="display:none;"
+                >
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                    />
+
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+
+                </svg>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+
+            <img
+                class="profile-image animate delay-1"
+                src="santoslopez2.png"
+                alt="Foto de perfil de Santos López"
+            >
+
+
+            <div class="hero-content">
+
+                <h1 class="name animate delay-2">
+                    SANTOS LÓPEZ
+                </h1>
+
+
+                <p class="role animate delay-2">
+                    Software Developer · FullStack · Creator
+                </p>
+
+                <!-- texto debajo -->
+                <p class="bio animate delay-3">
+                    Construyo cosas para internet, exploro nuevas
+                    ideas y comparto parte de lo que voy aprendiendo.
+                    Este es mi pequeño rincón en la web.
+                </p>
+
+
+                <!-- =================================================
+                     REDES SOCIALES
+                ================================================== -->
+
+                <div class="socials animate delay-4">
+
+
+                    <!-- =================================================
+                         GITHUB
+                    ================================================== -->
+
+                    <a
+                        class="social-link github"
+                        href="https://github.com/santoslopez"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+
+                            <path
+                                d="M12 .5a12 12 0 0 0-3.79
+                                23.4c.6.11.82-.26.82-.58v-2.04
+                                c-3.34.73-4.04-1.61-4.04-1.61
+                                -.55-1.39-1.34-1.76-1.34-1.76
+                                -1.09-.75.08-.73.08-.73
+                                1.2.08 1.84 1.23 1.84 1.23
+                                1.07 1.83 2.8 1.3 3.49.99
+                                .11-.78.42-1.3.76-1.6
+                                -2.66-.3-5.47-1.33-5.47-5.93
+                                0-1.31.47-2.38 1.24-3.22
+                                -.12-.3-.54-1.52.12-3.18
+                                0 0 1.01-.32 3.3 1.23
+                                .96-.27 1.98-.4 3-.4s2.04.13
+                                3 .4c2.29-1.55 3.3-1.23 3.3-1.23
+                                .66 1.66.24 2.88.12 3.18
+                                .77.84 1.24 1.91 1.24 3.22
+                                0 4.61-2.81 5.62-5.48 5.92
+                                .43.37.81 1.1.81 2.22v3.29
+                                c0 .32.22.69.83.57A12 12 0 0 0
+                                12 .5Z"
+                            />
+
+                        </svg>
+
+                        GitHub
+
+                    </a>
+
+
+                    <!-- =================================================
+                         LINKEDIN
+                    ================================================== -->
+
+                    <a
+                        class="social-link linkedin"
+                        href="https://www.linkedin.com/in/lopezsantos"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+
+                            <path
+                                d="M20.45 20.45h-3.56v-5.57
+                                c0-1.33-.03-3.04-1.85-3.04
+                                -1.85 0-2.14 1.45-2.14 2.94v5.67
+                                H9.35V8.99h3.42v1.56h.05
+                                c.48-.9 1.64-1.85 3.37-1.85
+                                3.6 0 4.26 2.37 4.26 5.46v6.29Z"
+                            />
+
+                            <path
+                                d="M5.34 7.43a2.06 2.06 0 1 1
+                                0-4.12 2.06 2.06 0 0 1 0 4.12ZM
+                                3.56 20.45H7.1V8.99H3.56v11.46Z"
+                            />
+
+                        </svg>
+
+                        LinkedIn
+
+                    </a>
+
+
+                    <!-- =================================================
+                         INSTAGRAM
+                    ================================================== -->
+
+                    <a
+                        class="social-link instagram"
+                        href="https://vsco.co/santoslopez-"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="4"
+                            />
+
+                            <circle
+                                cx="17.5"
+                                cy="6.5"
+                                r=".8"
+                                fill="currentColor"
+                                stroke="none"
+                            />
+
+                        </svg>
+
+                        Instagram
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider"></div>
+
+
+        <!-- =====================================================
+             ABOUT PREVIEW
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-label">
+                <h2>¡Hola!</h2>
+            </div>
+
+            <p>
+                Soy Santos López. Soy Ingeniero de Sistemas, desarrollador fullstack. 
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             ELSEWHERE
+        ====================================================== -->
+
+        <!--section class="section">
+
+            <div class="section-label">
+                Elsewhere
+            </div>
+            <div class="projects">
+                
+                <a
+                    class="project"
+                    href="links.html"
+                >
+
+                    <div>
+
+                        <h2 class="project-title">
+                            All my links
+                        </h2>
+
+                        <p class="project-description">
+                            Encuéntrame alrededor de la web.
+                        </p>
+
+                    </div>
+
+                    <span class="project-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                
+                <a
+                    class="project"
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div>
+
+                        <h2 class="project-title">
+                            GitHub
+                        </h2>
+
+                        <p class="project-description">
+                            Código, proyectos y experimentos.
+                        </p>
+
+                    </div>
+
+                    <span class="project-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section-->
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <span>
+            © 2026 Santos López
+        </span>
+
+        <a href="mailto:santos.lopez@galileo.edu">
+            santos.lopez@galileo.edu
+        </a>
+
+    </footer>
+
+</div>
+
+
+<!-- =========================================================
+     THEME JAVASCRIPT
+========================================================== -->
+
+<script>
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const moonIcon =
+        document.getElementById("moonIcon");
+
+    const sunIcon =
+        document.getElementById("sunIcon");
+
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    const systemDark =
+        window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+
+    let theme =
+        savedTheme ||
+        (systemDark ? "dark" : "light");
+
+
+    function applyTheme(currentTheme) {
+
+        document.documentElement
+            .setAttribute(
+                "data-theme",
+                currentTheme
+            );
+
+        localStorage.setItem(
+            "theme",
+            currentTheme
+        );
+
+
+        if (currentTheme === "dark") {
+
+            moonIcon.style.display = "none";
+            sunIcon.style.display = "block";
+
+        } else {
+
+            moonIcon.style.display = "block";
+            sunIcon.style.display = "none";
+
+        }
+    }
+
+
+    applyTheme(theme);
+
+
+    themeToggle.addEventListener(
+        "click",
+        () => {
+
+            theme =
+                theme === "dark"
+                    ? "light"
+                    : "dark";
+
+            applyTheme(theme);
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
